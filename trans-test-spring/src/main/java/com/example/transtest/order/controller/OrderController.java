@@ -25,7 +25,7 @@ public class OrderController {
     }
 
     @PutMapping("/orders/{id}/status")
-    public void updateOrderStatus(@PathVariable("id") long orderId, @RequestBody CustomerOrder customerOrder) throws Exception {
+    public void updateOrderStatus(@PathVariable("id") long orderId, @RequestBody CustomerOrderDto customerOrder) throws Exception {
         orderService.updateOrderStatus(orderId, customerOrder.getStatus());
     }
 }
