@@ -42,6 +42,7 @@ public class OrderService {
             oItem.setName(item.getName());
             oItem.setOrder(order);
             orderItemRepository.save(oItem);
+            order.getItems().add(oItem);
         });
 
 
@@ -49,7 +50,8 @@ public class OrderService {
     }
 
     public CustomerOrder getByOrderId(long orderId) {
-        return orderRepository.getByOrderId(orderId);
+        CustomerOrder order = orderRepository.getByOrderId(orderId);
+        return order;
     }
 
     public void updateOrderStatus(long orderId, OrderStatus status) throws Exception {

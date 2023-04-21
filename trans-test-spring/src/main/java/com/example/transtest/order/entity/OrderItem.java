@@ -1,5 +1,6 @@
 package com.example.transtest.order.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,7 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name="order_id")
+    @JsonBackReference
     private CustomerOrder order;
 
     private String name;

@@ -1,5 +1,6 @@
 package com.example.transtest.order.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -29,6 +30,7 @@ public class CustomerOrder {
     private ShippingDetail shippingDetail;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<OrderItem> items = new ArrayList<>();
 
     @Enumerated(EnumType.ORDINAL)
