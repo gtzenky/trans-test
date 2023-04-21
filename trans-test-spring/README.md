@@ -1,6 +1,5 @@
 # Getting Started with 
 
-## To create the order
 
 ## To create the order.
 
@@ -25,5 +24,18 @@
             }
 
 
+## To get the order.
 
-+ Response 204
++ GET /orders/{orderId}
+
+## To update order status
+
++ PUT /orders/{orderId}/status
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "status": SHIPPED
+            }
