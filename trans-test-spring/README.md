@@ -2,9 +2,9 @@
 
 ## To create the order
 
-## To create the order. POST /orders
+## To create the order.
 
-
++ POST /orders
 + Request (application/json)
 
     + Body
